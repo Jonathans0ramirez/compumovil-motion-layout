@@ -19,7 +19,7 @@
              xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- A transition describes an animation via start and end state -->
     <Transition
-            
+
             motion:constraintSetStart="@+id/start"
             motion:constraintSetEnd="@+id/end"
             motion:duration="3000">
@@ -47,6 +47,8 @@
                     motion:keyPositionType="parentRelative"
                     motion:percentY="0.6"
             />
+
+            <!-- KeyAttributes modify attributes during motion -->
             <KeyAttribute
                     motion:framePosition="50"
                     motion:motionTarget="@id/moon"
@@ -64,42 +66,39 @@
                     motion:motionTarget="@id/credits"
                     android:alpha="0.0"
             />
-
-            <!-- TODO Add Custom attributes here -->
-
         </KeyFrameSet>
     </Transition>
 
     <!-- Constraints to apply at the start of the animation -->
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            android:id="@id/moon"
-            
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toBottomOf="parent"
+                android:id="@id/moon"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintBottom_toBottomOf="parent"
         />
         <Constraint
-            android:id="@id/credits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.0"
-            android:layout_marginStart="16dp"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toBottomOf="@id/moon"
-            motion:layout_constraintTop_toTopOf="@id/moon"
-            />
+                android:id="@id/credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.0"
+                android:layout_marginStart="16dp"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintBottom_toBottomOf="@id/moon"
+                motion:layout_constraintTop_toTopOf="@id/moon"
+        />
     </ConstraintSet>
 
     <!-- Constraints to apply at the end of the animation -->
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@id/moon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintBottom_toBottomOf="parent"
+                android:id="@id/moon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintBottom_toBottomOf="parent"
         />
         <Constraint
                 android:id="@id/credits"
